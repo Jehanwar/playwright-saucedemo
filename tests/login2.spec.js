@@ -15,5 +15,6 @@ test('Login SauceDemo', async ({ page }) => {
     await buttonLogin.click();
 
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
-});
 
+    page.context().storageState({ path: 'auth.json'});
+});
